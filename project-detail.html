@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - RK Promoters</title>
+    <meta name="description" content="Explore premium residential plots with world-class amenities, DTCP approval, and bank loan facilities at RK Green City, Molapalayam, Rasipuram.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <img src="images/logo.png" alt="RK Promoters">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#advantages">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+919876543210" class="nav-phone"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <button class="btn-enquiry" onclick="openEnquiryModal()">Enquire Now</button>
+            </div>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Full-Width Banner Image -->
+    <section class="pd-banner" id="pdBanner">
+        <img class="pd-banner-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80" alt="RK Green City Banner">
+        <div class="pd-banner-overlay"></div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="pd-breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+            <a href="projects.html">Ongoing Projects</a> <i class="fas fa-chevron-right"></i>
+            <span class="project-name">RK Green City</span>
+        </div>
+    </div>
+
+    <!-- Project Info + Enquiry Form -->
+    <section class="pd-info-section">
+        <div class="container">
+            <div class="pd-info-grid">
+                <div class="pd-info-left">
+                    <h1 class="project-name pd-title">RK Green City</h1>
+                    <p class="pd-subtitle project-subtitle">Nature's Haven for Your Dream Home</p>
+                    <h2 class="pd-desc project-description">Premium Residential Plots</h2>
+                    <p class="pd-location"><i class="fas fa-map-marker-alt"></i> <span class="project-loc">Molapalayam, Rasipuram</span></p>
+
+                    <div class="pd-badge-cards">
+                        <div class="pd-badge-card">
+                            <div class="pd-badge-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="pd-badge-text">
+                                <strong>DTCP</strong>
+                                <span>Approved</span>
+                            </div>
+                        </div>
+                        <div class="pd-badge-card">
+                            <div class="pd-badge-icon"><i class="fas fa-university"></i></div>
+                            <div class="pd-badge-text">
+                                <strong>UPTO 90%</strong>
+                                <span>Bank Loan Available*</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pd-info-right">
+                    <div class="pd-enquiry-card">
+                        <h3>Enquire Now</h3>
+                        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
+                            <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                            <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                            <div class="form-group"><textarea placeholder="I'm interested in this project..." rows="3"></textarea></div>
+                            <button type="submit" class="btn btn-primary btn-full">Get Details <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Project -->
+    <section class="section pd-about-section">
+        <div class="container">
+            <div class="pd-about-content">
+                <div class="pd-about-text">
+                    <p class="project-about-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities & Features (horizontal scroll with dots like Venus) -->
+    <section class="section amenities-section">
+        <div class="container">
+            <div class="pd-section-label"><span class="project-name">RK Green City</span></div>
+            <div class="section-header">
+                <h2 class="section-title">Amenities & <span class="text-gradient">Features</span></h2>
+            </div>
+            <div class="pd-amenities-carousel">
+                <div class="pd-amenities-track" id="amenitiesTrack">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+            <div class="pd-amenities-dots" id="amenitiesDots">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Plan & Site View (split vertically) -->
+    <section class="section site-plan-section">
+        <div class="container">
+            <div class="pd-section-label"><span class="project-name">RK Green City</span></div>
+            <div class="section-header">
+                <h2 class="section-title">Site Plan & <span class="text-gradient">Site View</span></h2>
+            </div>
+            <div class="pd-split-grid">
+                <!-- Left: Site Plan -->
+                <div class="pd-split-card">
+                    <h3 class="pd-split-title"><i class="fas fa-drafting-compass"></i> Site Plan</h3>
+                    <div class="pd-split-content pd-split-img" onclick="openLightbox(this)">
+                        <img src="images/site-plan.png" alt="RK Green City - Site Plan">
+                        <div class="pd-plan-zoom"><i class="fas fa-search-plus"></i> Click to Enlarge</div>
+                    </div>
+                </div>
+                <!-- Right: Site View Photos -->
+                <div class="pd-split-card">
+                    <h3 class="pd-split-title"><i class="fas fa-camera"></i> Site View</h3>
+                    <div class="pd-siteview-carousel">
+                        <div class="pd-siteview-track" id="siteViewTrack">
+                            <div class="pd-siteview-slide active" onclick="openLightbox(this)">
+                                <img src="images/site-view-1.jpg" alt="RK Green City - Road View">
+                            </div>
+                            <div class="pd-siteview-slide" onclick="openLightbox(this)">
+                                <img src="images/site-view-2.jpg" alt="RK Green City - Junction View">
+                            </div>
+                            <div class="pd-siteview-slide" onclick="openLightbox(this)">
+                                <img src="images/site-view-3.jpg" alt="RK Green City - Road View 2">
+                            </div>
+                            <div class="pd-siteview-slide" onclick="openLightbox(this)">
+                                <img src="images/site-view-4.jpg" alt="RK Green City - Aerial View">
+                            </div>
+                        </div>
+                        <div class="pd-siteview-nav">
+                            <button class="pd-siteview-btn" onclick="changeSiteView(-1)"><i class="fas fa-chevron-left"></i></button>
+                            <button class="pd-siteview-btn" onclick="changeSiteView(1)"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="pd-siteview-dots" id="siteViewDots">
+                            <button class="pd-dot active" onclick="goToSiteView(0)"></button>
+                            <button class="pd-dot" onclick="goToSiteView(1)"></button>
+                            <button class="pd-dot" onclick="goToSiteView(2)"></button>
+                            <button class="pd-dot" onclick="goToSiteView(3)"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Location -->
+    <section class="section location-section">
+        <div class="container">
+            <div class="pd-section-label"><span class="project-name">RK Green City</span></div>
+            <div class="section-header">
+                <h2 class="section-title">Strategic <span class="text-gradient">Location</span></h2>
+            </div>
+            <div class="location-grid">
+                <div class="location-list">
+                    <ul>
+                        <!-- Populated by JS -->
+                    </ul>
+                    <div class="pd-location-actions">
+                        <a href="images/site-plan.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-map"></i> View Key Plan</a>
+                        <a href="images/site-plan.pdf" download class="btn btn-outline-dark"><i class="fas fa-download"></i> Download Brochure</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="pd-location-map-side">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31289.04!2d78.18!3d11.46!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babdb2e33ffffe1%3A0x5b0e3a4cfbb3e4b3!2sMolapalayam%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1707000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Photos - Horizontal Scrolling Gallery (like Venus Estates) -->
+    <section class="section" style="background: var(--bg-cream); overflow: hidden;">
+        <div class="pd-site-photos-scroll">
+            <div class="pd-site-photos-track">
+                <!-- Populated by JS - duplicated for infinite scroll -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Testimonials</span>
+                <h2 class="section-title">Words of <span class="text-gradient">Appreciation</span> from Our Clientele</h2>
+            </div>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"We are delighted to share that we bought our dream land with RK Promoters and we are extremely happy about their approach and processes. The staff were very supportive and we are glad to refer RK Promoters confidently."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info"><h5>Mr. Selvaraj M.</h5><span>IOB (Retired)</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"I want to extend my heartfelt thanks for helping me find and purchase my first piece of land. Your team's dedication and guidance made the process smooth and worry-free."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MV</div>
+                            <div class="author-info"><h5>Mr. Manivannan</h5><span>India Cements (Retired)</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"Thanks to RK Promoters, I am now a proud plot owner. Your attention to detail and exceptional customer service made the experience smooth and hassle-free."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">UR</div>
+                            <div class="author-info"><h5>Mr. Uthiraraj</h5><span>Teacher</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"Thank you very much for showing the right choices of land based on our expectations. We were really happy with your services. Truly a trustworthy partner!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">UR</div>
+                            <div class="author-info"><h5>Mrs. Umarani</h5><span>Teacher</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="test-nav-btn" onclick="moveTestimonials(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="test-nav-btn" onclick="moveTestimonials(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Contact Information</span>
+                <h2 class="section-title">We are always ready to <span class="text-gradient">help you</span> and answer your questions</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5>Visit Us</h5>
+                                <p><strong>RK Promoters LLP</strong><br>3rd Floor, Ganesh Towers, SKS Hospital Road,<br>Fairlands, Salem - 636004, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h5>Send us your query anytime!</h5>
+                                <a href="mailto:info@rkpromoters.in">info@rkpromoters.in</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h5>Mobile</h5>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <h3>Reach Us</h3>
+                    <p style="color: var(--text-light); margin-bottom: 20px; font-size: 0.92rem;">Please fill the below form to get in touch!</p>
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
+                            <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                        </div>
+                        <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                        <div class="form-group"><textarea placeholder="Your Message" rows="4"></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+                    </a>
+                    <p>RK Promoters is a trusted real estate company committed to delivering premium residential plots with transparent processes and exceptional value.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Projects</h4>
+                    <ul>
+                        <li><a href="project-detail.html?project=rk-green-city">RK Green City</a></li>
+                        <li><a href="#">RK Royal Garden (Soon)</a></li>
+                        <li><a href="#">RK Lakeside Villas (Soon)</a></li>
+                        <li><a href="#">RK Paradise (Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 3rd Floor, Ganesh Towers, Fairlands, Salem - 636004</p>
+                    <p><i class="fas fa-envelope"></i> info@rkpromoters.in</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 RK Promoters LLP. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-enquiry" onclick="openEnquiryModal()"><i class="fas fa-comment-dots"></i><span>Enquiry</span></div>
+    <a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Enquiry Modal -->
+    <div class="modal-overlay" id="enquiryModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeEnquiryModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header"><h3>Enquire Now</h3><p>Fill the form below and we'll get back to you shortly!</p></div>
+            <form class="modal-form" onsubmit="handleEnquirySubmit(event)">
+                <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
+                <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Select Project (Optional)</option>
+                        <option value="rk-green-city">RK Green City</option>
+                        <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
+                        <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
+                        <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                    </select>
+                </div>
+                <div class="form-group"><textarea placeholder="Your Message" rows="3"></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Enquiry <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img id="lightboxImg" src="" alt="Site Photo">
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+    <script src="js/main.js"></script>
+</body>
+</html>

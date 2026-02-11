@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RK Promoters | Trusted Real Estate Partner</title>
+    <meta name="description" content="Learn about RK Promoters - our story, vision, mission, and the team behind your trusted real estate partner in Salem.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <img src="images/logo.png" alt="RK Promoters">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="index.html#advantages">Why Us</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+919876543210" class="nav-phone"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <button class="btn-enquiry" onclick="openEnquiryModal()">Enquire Now</button>
+            </div>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <div class="page-banner-content">
+                <h1>About RK Promoters</h1>
+                <p class="breadcrumb"><a href="index.html">Home</a> / About Us</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Profile -->
+    <section class="section about-detail-section">
+        <div class="container">
+            <div class="about-profile-grid">
+                <div class="about-images">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="RK Promoters Office">
+                    </div>
+                    <div class="about-img-float">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Our Projects">
+                    </div>
+                    <div class="about-experience">
+                        <span class="exp-number">7+</span>
+                        <span class="exp-text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-label">Company Profile</span>
+                    <h2 class="section-title">Building Trust, <span class="text-gradient">Creating Value</span></h2>
+                    <p class="about-lead">RK Promoters is a thriving and forward-thinking real estate company established by a dynamic team of professionals united by a shared passion for design excellence and quality development.</p>
+                    <p>The firm is dedicated to creating premium residential and commercial spaces that seamlessly combine modern aesthetics, functionality, and long-term value. Committed to excellence and customer satisfaction, we aim to deliver the highest quality real estate solutions to our valued clients.</p>
+                    <h4 style="margin-top: 24px; margin-bottom: 12px; font-family: var(--font-heading); color: var(--text-dark);">Operational Focus</h4>
+                    <p>RK Promoters primarily concentrates its development and investment initiatives across Salem, Erode, Tirupur, and Coimbatore — the vibrant Kongu Belt region, known for its industrial strength, cultural richness, and emerging real estate opportunities.</p>
+                    <p>By offering transparent processes, clear property titles, enviable locations, and properties with excellent value appreciation, it is our objective to provide an unmatched experience for our clients.</p>
+                </div>
+            </div>
+
+            <!-- Vision & Mission -->
+            <div class="vision-mission-grid">
+                <div class="vm-card">
+                    <h3><i class="fas fa-eye"></i> Our Vision</h3>
+                    <p>To redefine real estate development through thoughtful design, innovation, and integrity — creating spaces that inspire trust, comfort, and long-term value for every family and investor who chooses RK Promoters.</p>
+                </div>
+                <div class="vm-card">
+                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                    <p>To consistently deliver high-quality projects that reflect excellence in architecture, engineering, and execution — while nurturing long-term relationships with clients, investors, and communities across Tamil Nadu.</p>
+                </div>
+            </div>
+
+            <!-- Differentiators -->
+            <div class="section-header">
+                <span class="section-label">Our Edge</span>
+                <h2 class="section-title">RK Promoters <span class="text-gradient">Differentiators</span></h2>
+                <p class="section-desc">What sets us apart in the real estate landscape.</p>
+            </div>
+            <div class="differentiators-grid">
+                <div class="diff-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h4>Premium Locations</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Transparent Processes</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h4>Clear Titles</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-landmark"></i>
+                    <h4>Govt. Compliances</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Customer Service</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-university"></i>
+                    <h4>Bank Approved</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-gavel"></i>
+                    <h4>Legal & Financial Support</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>High Appreciation</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Quick Turnaround</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Market Knowledge</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h4>Construction Support</h4>
+                </div>
+                <div class="diff-card">
+                    <i class="fas fa-award"></i>
+                    <h4>Quality Assurance</h4>
+                </div>
+            </div>
+
+            <!-- Management Team -->
+            <div class="section-header">
+                <span class="section-label">Leadership</span>
+                <h2 class="section-title">Meet Our <span class="text-gradient">Management Team</span></h2>
+                <p class="section-desc">The visionaries driving RK Promoters forward.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Arjunsri Baskar</h4>
+                        <span class="role">Architect & Co-Founder</span>
+                        <p>With over a decade of experience in real estate, design, and construction, Arjunsri has successfully executed more than 200 interior and construction projects. His deep understanding of spatial planning, aesthetics, and project management forms the creative foundation of the company.</p>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Prem Kumar</h4>
+                        <span class="role">Civil Engineer & Co-Founder</span>
+                        <p>Prem brings a strong engineering and business background with over 10 years of real estate experience complemented by extensive involvement in the hospitality sector. His expertise in structural design, cost optimization, and execution management drives project excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+                    </a>
+                    <p>RK Promoters is a trusted real estate company committed to delivering premium residential plots with transparent processes and exceptional value.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Projects</h4>
+                    <ul>
+                        <li><a href="project-detail.html?project=rk-green-city">RK Green City</a></li>
+                        <li><a href="#">RK Royal Garden (Soon)</a></li>
+                        <li><a href="#">RK Lakeside Villas (Soon)</a></li>
+                        <li><a href="#">RK Paradise (Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 3rd Floor, Ganesh Towers, Fairlands, Salem - 636004</p>
+                    <p><i class="fas fa-envelope"></i> info@rkpromoters.in</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RK Promoters LLP. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-enquiry" onclick="openEnquiryModal()">
+        <i class="fas fa-comment-dots"></i>
+        <span>Enquiry</span>
+    </div>
+    <a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Enquiry Modal -->
+    <div class="modal-overlay" id="enquiryModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeEnquiryModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3>Enquire Now</h3>
+                <p>Fill the form below and we'll get back to you shortly!</p>
+            </div>
+            <form class="modal-form" onsubmit="handleEnquirySubmit(event)">
+                <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
+                <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Select Project (Optional)</option>
+                        <option value="rk-green-city">RK Green City</option>
+                        <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
+                        <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
+                        <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                    </select>
+                </div>
+                <div class="form-group"><textarea placeholder="Your Message" rows="3"></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Enquiry <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

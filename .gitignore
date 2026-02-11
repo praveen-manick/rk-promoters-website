@@ -1,0 +1,19 @@
+# System files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+.cursor/
+
+# Temp/build files
+*.log
+convert-pdf.ps1
+
+# Local server script (not needed in production)
+serve.ps1

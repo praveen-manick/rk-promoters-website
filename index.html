@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK Promoters | Premium Real Estate in Salem & Rasipuram</title>
+    <meta name="description" content="Discover premium residential plots and properties in Salem & Rasipuram. RK Promoters offers transparent processes, prime locations, and exceptional value appreciation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <img src="images/logo.png" alt="RK Promoters">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#advantages">Why Us</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+919876543210" class="nav-phone"><i class="fas fa-phone"></i> +91 98765 43210</a>
+                <button class="btn-enquiry" onclick="openEnquiryModal()">Enquire Now</button>
+            </div>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')"></div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80')"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text-slider">
+                <div class="hero-text-slide active">
+                    <span class="hero-badge">Premium Plots Available</span>
+                    <h1>Discover Your <br><span class="text-accent">Perfect Plot</span></h1>
+                    <p>Invest in carefully curated residential plots that promise growth, comfort, and a future worth building.</p>
+                </div>
+                <div class="hero-text-slide">
+                    <span class="hero-badge">Trust & Transparency</span>
+                    <h1>Plots Built on <br><span class="text-accent">Promise & Trust</span></h1>
+                    <p>Every transaction backed by clear titles, transparent processes, and unwavering commitment to your satisfaction.</p>
+                </div>
+                <div class="hero-text-slide">
+                    <span class="hero-badge">Smart Investment</span>
+                    <h1>Empowering Dreams, <br><span class="text-accent">Assured Returns</span></h1>
+                    <p>Where transparency meets appreciation. Invest in land with our trusted processes for a secure future.</p>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="projects.html" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-slider-nav">
+            <button class="slider-dot active" onclick="goToSlide(0)"></button>
+            <button class="slider-dot" onclick="goToSlide(1)"></button>
+            <button class="slider-dot" onclick="goToSlide(2)"></button>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <span>Scroll Down</span>
+        </div>
+        <!-- Premium wave divider -->
+        <div class="section-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,130.83,141.14,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Ongoing Projects Section -->
+    <section class="section projects-section" id="projects">
+        <!-- Decorative elements -->
+        <div class="section-decoration deco-gradient-orb" style="width:400px;height:400px;top:-100px;right:-150px;"></div>
+        <div class="section-decoration deco-circle" style="width:200px;height:200px;bottom:50px;left:-60px;"></div>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Our Portfolio</span>
+                <h2 class="section-title">Ongoing <span class="text-gradient">Projects</span></h2>
+                <p class="section-desc">Explore our currently active residential developments designed for modern living.</p>
+            </div>
+            <div class="projects-grid projects-grid-featured">
+                <!-- RK Green City - Featured Ongoing Project -->
+                <div class="project-card project-card-featured" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80" alt="RK Green City">
+                        <div class="project-badge">Ongoing</div>
+                        <div class="project-overlay">
+                            <a href="project-detail.html?project=rk-green-city" class="btn btn-sm">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Green City</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Molapalayam, Rasipuram</p>
+                        <p class="project-desc-brief">A premium residential plot development surrounded by lush greenery, offering DTCP-approved plots with world-class amenities in the heart of Rasipuram.</p>
+                        <div class="project-tags">
+                            <span>DTCP Approved</span>
+                            <span>Bank Loan Available</span>
+                            <span>Premium Plots</span>
+                            <span>Gated Community</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Projects Section -->
+    <section class="section upcoming-section" id="upcoming">
+        <div class="section-decoration deco-dots" style="width:300px;height:300px;top:40px;left:-80px;opacity:0.4;"></div>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Coming Soon</span>
+                <h2 class="section-title">Upcoming <span class="text-gradient">Projects</span></h2>
+                <p class="section-desc">Exciting new developments on the horizon. Register your interest early!</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card upcoming-card" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="RK Royal Garden">
+                        <div class="project-badge badge-upcoming">Coming Soon</div>
+                        <div class="upcoming-overlay">
+                            <div class="upcoming-label">
+                                <i class="fas fa-clock"></i>
+                                <span>Launching Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Royal Garden</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Salem</p>
+                        <div class="project-tags">
+                            <span>Residential Plots</span>
+                            <span>Premium Location</span>
+                        </div>
+                        <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+                <div class="project-card upcoming-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="RK Lakeside Villas">
+                        <div class="project-badge badge-upcoming">Coming Soon</div>
+                        <div class="upcoming-overlay">
+                            <div class="upcoming-label">
+                                <i class="fas fa-clock"></i>
+                                <span>Launching Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Lakeside Villas</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Erode</p>
+                        <div class="project-tags">
+                            <span>Villa Plots</span>
+                            <span>Lake View</span>
+                        </div>
+                        <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+                <div class="project-card upcoming-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="RK Paradise">
+                        <div class="project-badge badge-upcoming">Coming Soon</div>
+                        <div class="upcoming-overlay">
+                            <div class="upcoming-label">
+                                <i class="fas fa-clock"></i>
+                                <span>Launching Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Paradise</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Coimbatore</p>
+                        <div class="project-tags">
+                            <span>Gated Community</span>
+                            <span>Smart Homes</span>
+                        </div>
+                        <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-bg" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')"></div>
+        <div class="stats-overlay"></div>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Ongoing Projects</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="700">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Plots Sold</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="7">0</div>
+                    <div class="stat-suffix">+</div>
+                    <p>Years of Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="section-decoration deco-gradient-orb" style="width:500px;height:500px;top:-150px;left:-200px;"></div>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images reveal reveal-left">
+                    <div class="about-img-main">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="About RK Promoters">
+                    </div>
+                    <div class="about-img-float">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="Our Projects">
+                    </div>
+                    <div class="about-experience">
+                        <span class="exp-number">7+</span>
+                        <span class="exp-text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+                <div class="about-content reveal reveal-right">
+                    <span class="section-label">Who We Are</span>
+                    <h2 class="section-title">RK Promoters: <span class="text-gradient">About & Beyond</span></h2>
+                    <p class="about-lead">RK Promoters is a thriving and innovative real estate company established by a cohesive and talented group of professionals who share a passion for excellence in property development.</p>
+                    <p>Committed to excellence and customer satisfaction, we aim to deliver the highest quality real estate solutions to our valued clients. Our mission is to create an unparalleled experience by providing open and transparent processes, clear property titles, premium locations, and properties that offer exceptional value appreciation.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Transparent Processes</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Clear Property Titles</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Premium Locations</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Value Appreciation</span>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Explore More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="section advantages-section" id="advantages">
+        <div class="section-decoration deco-circle" style="width:300px;height:300px;top:-80px;right:-100px;"></div>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">The RK Advantage</span>
+                <h2 class="section-title">Why Choose <span class="text-gradient">RK Promoters</span></h2>
+                <p class="section-desc">Experience the difference with our commitment to quality, transparency, and value.</p>
+            </div>
+            <div class="advantages-marquee">
+                <div class="marquee-track">
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Transparent Process</h4>
+                        <p>Complete clarity at every stage of your property purchase journey.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Premium Locations</h4>
+                        <p>Strategically chosen locations with excellent connectivity and growth potential.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>High Value Appreciation</h4>
+                        <p>Properties that consistently deliver exceptional returns on investment.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Timely Delivery</h4>
+                        <p>On-time project completion with no compromises on quality.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-university"></i></div>
+                        <h4>Financial Assistance</h4>
+                        <p>Easy loan facilities and financial guidance for hassle-free investment.</p>
+                    </div>
+                    <!-- Duplicated for seamless scroll -->
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Transparent Process</h4>
+                        <p>Complete clarity at every stage of your property purchase journey.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <h4>Premium Locations</h4>
+                        <p>Strategically chosen locations with excellent connectivity and growth potential.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>High Value Appreciation</h4>
+                        <p>Properties that consistently deliver exceptional returns on investment.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Timely Delivery</h4>
+                        <p>On-time project completion with no compromises on quality.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="adv-icon"><i class="fas fa-university"></i></div>
+                        <h4>Financial Assistance</h4>
+                        <p>Easy loan facilities and financial guidance for hassle-free investment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="advantages-stats">
+                <div class="adv-stat">
+                    <span class="adv-stat-number">500+</span>
+                    <span class="adv-stat-label">Happy Clients</span>
+                </div>
+                <div class="adv-stat-divider"></div>
+                <div class="adv-stat">
+                    <span class="adv-stat-number">700+</span>
+                    <span class="adv-stat-label">Plots Sold</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section" id="testimonials">
+        <div class="section-decoration deco-dots" style="width:250px;height:250px;bottom:20px;right:-60px;opacity:0.3;"></div>
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Client Stories</span>
+                <h2 class="section-title">Words of <span class="text-gradient">Appreciation</span></h2>
+                <p class="section-desc">Hear what our valued clients have to say about their experience with RK Promoters.</p>
+            </div>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"We are delighted to share that we bought our dream land with RK Promoters and we are extremely happy about their approach and processes. The staff were very supportive, assisting us clearly during all stages with complete openness. We are glad to refer RK Promoters confidently to our near and dear ones."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info"><h5>Mr. Selvaraj M.</h5><span>IOB (Retired)</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"I want to extend my heartfelt thanks for helping me find and purchase my first piece of land. Your team's dedication and guidance made the process smooth and worry-free. I'm thrilled with my new property and appreciate the excellent service provided by RK Promoters."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MV</div>
+                            <div class="author-info"><h5>Mr. Manivannan</h5><span>India Cements (Retired)</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"Thanks to RK Promoters, I am now a proud plot owner. Your attention to detail and exceptional customer service made the experience smooth and hassle-free. Thanks again for all the support! I would highly recommend them to anyone looking for quality plots."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">UR</div>
+                            <div class="author-info"><h5>Mr. Uthiraraj</h5><span>Teacher</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                        <p>"Thank you very much RK Promoters for showing the right choices of land based on our expectations. We were really happy with your services. The team understood exactly what we needed and delivered beyond our expectations. Truly a trustworthy real estate partner!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">UR</div>
+                            <div class="author-info"><h5>Mrs. Umarani</h5><span>Teacher</span></div>
+                            <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="test-nav-btn" onclick="moveTestimonials(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="test-nav-btn" onclick="moveTestimonials(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="section-decoration deco-gradient-orb" style="width:400px;height:400px;bottom:-100px;left:-100px;"></div>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal reveal-left">
+                    <span class="section-label">Get In Touch</span>
+                    <h2 class="section-title">We're Always Ready <br>to <span class="text-gradient">Help You</span></h2>
+                    <p>Have questions about our projects or need guidance on your property investment? Our team is here to assist you every step of the way.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5>Visit Us</h5>
+                                <p>RK Promoters LLP<br>3rd Floor, Ganesh Towers, SKS Hospital Road,<br>Fairlands, Salem - 636004, Tamil Nadu</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div><h5>Email Us</h5><a href="mailto:info@rkpromoters.in">info@rkpromoters.in</a></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div><h5>Call Us</h5><a href="tel:+919876543210">+91 98765 43210</a></div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal reveal-right">
+                    <h3>Send Us a Message</h3>
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
+                            <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
+                        </div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
+                        <div class="form-group">
+                            <select name="project">
+                                <option value="">Select Project (Optional)</option>
+                                <option value="rk-green-city">RK Green City</option>
+                                <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
+                                <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
+                                <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><textarea name="message" placeholder="Your Message" rows="4"></textarea></div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="logo footer-logo">
+                        <img src="images/logo.png" alt="RK Promoters" class="logo-img">
+                    </a>
+                    <p>RK Promoters is a trusted real estate company committed to delivering premium residential plots with transparent processes and exceptional value.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Projects</h4>
+                    <ul>
+                        <li><a href="project-detail.html?project=rk-green-city">RK Green City</a></li>
+                        <li><a href="#">RK Royal Garden (Soon)</a></li>
+                        <li><a href="#">RK Lakeside Villas (Soon)</a></li>
+                        <li><a href="#">RK Paradise (Soon)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 3rd Floor, Ganesh Towers, Fairlands, Salem - 636004</p>
+                    <p><i class="fas fa-envelope"></i> info@rkpromoters.in</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RK Promoters LLP. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-enquiry" onclick="openEnquiryModal()">
+        <i class="fas fa-comment-dots"></i><span>Enquiry</span>
+    </div>
+    <a href="https://wa.me/919876543210" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Enquiry Modal -->
+    <div class="modal-overlay" id="enquiryModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeEnquiryModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3>Enquire Now</h3>
+                <p>Fill the form below and we'll get back to you shortly!</p>
+            </div>
+            <form class="modal-form" onsubmit="handleEnquirySubmit(event)">
+                <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
+                <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group">
+                    <select>
+                        <option value="">Select Project (Optional)</option>
+                        <option value="rk-green-city">RK Green City</option>
+                        <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
+                        <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
+                        <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                    </select>
+                </div>
+                <div class="form-group"><textarea placeholder="Your Message" rows="3"></textarea></div>
+                <button type="submit" class="btn btn-primary btn-full">Submit Enquiry <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img id="lightboxImg" src="" alt="Site Photo">
+    </div>
+
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
