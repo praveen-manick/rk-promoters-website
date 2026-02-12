@@ -90,10 +90,10 @@
                     <div class="pd-enquiry-card">
                         <h3>Enquire Now</h3>
                         <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                            <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
-                            <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
-                            <div class="form-group"><input type="email" placeholder="Email Address"></div>
-                            <div class="form-group"><textarea placeholder="I'm interested in this project..." rows="3"></textarea></div>
+                            <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
+                            <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
+                            <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
+                            <div class="form-group"><textarea name="message" placeholder="I'm interested in this project..." rows="3"></textarea></div>
                             <button type="submit" class="btn btn-primary btn-full">Get Details <i class="fas fa-paper-plane"></i></button>
                         </form>
                     </div>
@@ -308,11 +308,11 @@
                     <p style="color: var(--text-light); margin-bottom: 20px; font-size: 0.92rem;">Please fill the below form to get in touch!</p>
                     <form class="contact-form" onsubmit="handleContactSubmit(event)">
                         <div class="form-row">
-                            <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
-                            <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
+                            <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
+                            <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
                         </div>
-                        <div class="form-group"><input type="email" placeholder="Email Address"></div>
-                        <div class="form-group"><textarea placeholder="Your Message" rows="4"></textarea></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
+                        <div class="form-group"><textarea name="message" placeholder="Your Message" rows="4"></textarea></div>
                         <button type="submit" class="btn btn-primary btn-full">Send Message <i class="fas fa-paper-plane"></i></button>
                     </form>
                 </div>
@@ -375,16 +375,16 @@
             <button class="modal-close" onclick="closeEnquiryModal()"><i class="fas fa-times"></i></button>
             <div class="modal-header"><h3>Enquire Now</h3><p>Fill the form below and we'll get back to you shortly!</p></div>
             <form class="modal-form" onsubmit="handleEnquirySubmit(event)">
-                <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
-                <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
-                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
                 <div class="form-group">
-                    <select>
+                    <select name="project">
                         <option value="">Select Project (Optional)</option>
-                        <option value="rk-green-city">RK Green City</option>
-                        <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
-                        <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
-                        <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                        <option value="RK Green City">RK Green City</option>
+                        <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
+                        <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
+                        <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
                     </select>
                 </div>
                 <div class="form-group"><textarea placeholder="Your Message" rows="3"></textarea></div>

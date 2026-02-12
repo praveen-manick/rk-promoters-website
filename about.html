@@ -236,16 +236,16 @@
                 <p>Fill the form below and we'll get back to you shortly!</p>
             </div>
             <form class="modal-form" onsubmit="handleEnquirySubmit(event)">
-                <div class="form-group"><input type="text" placeholder="Your Name *" required></div>
-                <div class="form-group"><input type="tel" placeholder="Phone Number *" required></div>
-                <div class="form-group"><input type="email" placeholder="Email Address"></div>
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
                 <div class="form-group">
-                    <select>
+                    <select name="project">
                         <option value="">Select Project (Optional)</option>
-                        <option value="rk-green-city">RK Green City</option>
-                        <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
-                        <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
-                        <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                        <option value="RK Green City">RK Green City</option>
+                        <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
+                        <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
+                        <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
                     </select>
                 </div>
                 <div class="form-group"><textarea placeholder="Your Message" rows="3"></textarea></div>

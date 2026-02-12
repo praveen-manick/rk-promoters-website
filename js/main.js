@@ -283,84 +283,169 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============ FORM HANDLING ============
+const FORMSPREE_URL = 'https://formspree.io/f/xqedevwd';
+const WHATSAPP_NUMBER = '919443029094';
+
+// Send data to Formspree (email notification)
+function sendToFormspree(data) {
+    return fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+    });
+}
+
+// Open WhatsApp with form data
+function sendToWhatsApp(data) {
+    const lines = [
+        `*New Enquiry from RK Promoters Website*`,
+        ``,
+        `*Name:* ${data.name || 'N/A'}`,
+        `*Phone:* ${data.phone || 'N/A'}`,
+        `*Email:* ${data.email || 'N/A'}`,
+        `*Project:* ${data.project || 'Not specified'}`,
+        `*Message:* ${data.message || 'No message'}`
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+}
+
+// Extract form data from a form element
+function getFormData(form) {
+    const get = (sel) => {
+        const el = form.querySelector(sel);
+        return el ? el.value.trim() : '';
+    };
+    return {
+        name: get('input[name="name"], input[placeholder*="Name"]'),
+        phone: get('input[name="phone"], input[type="tel"], input[placeholder*="Phone"]'),
+        email: get('input[name="email"], input[type="email"], input[placeholder*="Email"]'),
+        project: get('select') || '',
+        message: get('textarea') || ''
+    };
+}
+
 function handleContactSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
+    const data = getFormData(form);
     
     // Loading state
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     btn.disabled = true;
     
-    // Simulate form submission
-    setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-        btn.style.background = '#22c55e';
-        btn.style.borderColor = '#22c55e';
-        
-        form.reset();
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.style.borderColor = '';
-            btn.disabled = false;
-        }, 3000);
-    }, 1500);
+    // Send to Formspree (email)
+    sendToFormspree(data)
+        .then(response => {
+            if (response.ok) {
+                btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+                btn.style.background = '#22c55e';
+                btn.style.borderColor = '#22c55e';
+                form.reset();
+                
+                // Also send to WhatsApp
+                sendToWhatsApp(data);
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.style.borderColor = '';
+                    btn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Formspree error');
+            }
+        })
+        .catch(() => {
+            // Even if Formspree fails, send via WhatsApp
+            sendToWhatsApp(data);
+            btn.innerHTML = '<i class="fas fa-check"></i> Sent via WhatsApp!';
+            btn.style.background = '#25D366';
+            btn.style.borderColor = '#25D366';
+            form.reset();
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.style.borderColor = '';
+                btn.disabled = false;
+            }, 3000);
+        });
 }
 
 function handleEnquirySubmit(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
+    const data = getFormData(form);
     
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
     btn.disabled = true;
     
-    setTimeout(() => {
-        // Show success message
-        form.innerHTML = `
-            <div class="success-message show">
-                <i class="fas fa-check-circle"></i>
-                <h4>Thank You!</h4>
-                <p>Your enquiry has been submitted successfully. We'll get back to you shortly.</p>
-            </div>
-        `;
-        
-        setTimeout(() => {
-            closeEnquiryModal();
-            // Reset form after closing
+    // Send to Formspree (email)
+    sendToFormspree(data)
+        .then(response => {
+            // Show success message
+            form.innerHTML = `
+                <div class="success-message show">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Thank You!</h4>
+                    <p>Your enquiry has been submitted successfully. We'll get back to you shortly.</p>
+                </div>
+            `;
+            
+            // Also send to WhatsApp
+            sendToWhatsApp(data);
+            
             setTimeout(() => {
-                form.innerHTML = getEnquiryFormHTML();
-            }, 500);
-        }, 2500);
-    }, 1500);
+                closeEnquiryModal();
+                setTimeout(() => {
+                    form.innerHTML = getEnquiryFormHTML();
+                }, 500);
+            }, 2500);
+        })
+        .catch(() => {
+            // Fallback to WhatsApp only
+            sendToWhatsApp(data);
+            form.innerHTML = `
+                <div class="success-message show">
+                    <i class="fas fa-check-circle"></i>
+                    <h4>Thank You!</h4>
+                    <p>Your enquiry has been sent via WhatsApp. We'll contact you shortly.</p>
+                </div>
+            `;
+            setTimeout(() => {
+                closeEnquiryModal();
+                setTimeout(() => {
+                    form.innerHTML = getEnquiryFormHTML();
+                }, 500);
+            }, 2500);
+        });
 }
 
 function getEnquiryFormHTML() {
     return `
         <div class="form-group">
-            <input type="text" placeholder="Your Name *" required>
+            <input type="text" name="name" placeholder="Your Name *" required>
         </div>
         <div class="form-group">
-            <input type="tel" placeholder="Phone Number *" required>
+            <input type="tel" name="phone" placeholder="Phone Number *" required>
         </div>
         <div class="form-group">
-            <input type="email" placeholder="Email Address">
+            <input type="email" name="email" placeholder="Email Address">
         </div>
         <div class="form-group">
-            <select>
+            <select name="project">
                 <option value="">Select Project (Optional)</option>
-                <option value="rk-green-city">RK Green City</option>
-                <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
-                <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
-                <option value="rk-paradise">RK Paradise (Upcoming)</option>
+                <option value="RK Green City">RK Green City</option>
+                <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
+                <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
+                <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
             </select>
         </div>
         <div class="form-group">
-            <textarea placeholder="Your Message" rows="3"></textarea>
+            <textarea name="message" placeholder="Your Message" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-full">Submit Enquiry <i class="fas fa-arrow-right"></i></button>
     `;
