@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -44,70 +45,139 @@
         </div>
     </nav>
 
-    <!-- Full-Width Banner Image -->
-    <section class="pd-banner" id="pdBanner">
+    <!-- Project Hero Section (Banner + Info Overlay) -->
+    <section class="pd-hero" id="pdBanner">
         <img class="pd-banner-img" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80" alt="RK Green City Banner">
-        <div class="pd-banner-overlay"></div>
-    </section>
-
-    <!-- Breadcrumb -->
-    <div class="pd-breadcrumb">
-        <div class="container">
-            <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
-            <a href="projects.html">Ongoing Projects</a> <i class="fas fa-chevron-right"></i>
-            <span class="project-name">RK Green City</span>
+        <div class="pd-hero-overlay"></div>
+        
+        <!-- Breadcrumb (top of hero) -->
+        <div class="pd-hero-breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i>
+                <a href="projects.html">Projects</a> <i class="fas fa-chevron-right"></i>
+                <span class="project-name">RK Green City</span>
+            </div>
         </div>
-    </div>
 
-    <!-- Project Info + Enquiry Form -->
-    <section class="pd-info-section">
-        <div class="container">
-            <div class="pd-info-grid">
-                <div class="pd-info-left">
-                    <h1 class="project-name pd-title">RK Green City</h1>
-                    <p class="pd-subtitle project-subtitle">Nature's Haven for Your Dream Home</p>
-                    <h2 class="pd-desc project-description">Premium Residential Plots</h2>
-                    <p class="pd-location"><i class="fas fa-map-marker-alt"></i> <span class="project-loc">Molapalayam, Rasipuram</span></p>
+        <!-- Project Info (bottom of hero) -->
+        <div class="pd-hero-content">
+            <div class="container">
+                <div class="pd-hero-status">Ongoing Project</div>
+                <h1 class="project-name pd-hero-title">RK Green City</h1>
+                <p class="pd-hero-subtitle project-subtitle">Nature's Haven for Your Dream Home</p>
+                <p class="pd-hero-location"><i class="fas fa-map-marker-alt"></i> <span class="project-loc">Molapalayam, Rasipuram</span></p>
 
-                    <div class="pd-badge-cards">
-                        <div class="pd-badge-card">
-                            <div class="pd-badge-icon"><i class="fas fa-certificate"></i></div>
-                            <div class="pd-badge-text">
-                                <strong>DTCP</strong>
-                                <span>Approved</span>
-                            </div>
-                        </div>
-                        <div class="pd-badge-card">
-                            <div class="pd-badge-icon"><i class="fas fa-university"></i></div>
-                            <div class="pd-badge-text">
-                                <strong>UPTO 90%</strong>
-                                <span>Bank Loan Available*</span>
-                            </div>
-                        </div>
+                <div class="pd-hero-badges">
+                    <div class="pd-hero-badge">
+                        <i class="fas fa-certificate"></i>
+                        <span>DTCP Approved</span>
+                    </div>
+                    <div class="pd-hero-badge">
+                        <i class="fas fa-university"></i>
+                        <span>Bank Loan Available</span>
+                    </div>
+                    <div class="pd-hero-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Gated Community</span>
                     </div>
                 </div>
-                <div class="pd-info-right">
-                    <div class="pd-enquiry-card">
-                        <h3>Enquire Now</h3>
-                        <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                            <div class="form-group"><input type="text" name="name" placeholder="Your Name *" required></div>
-                            <div class="form-group"><input type="tel" name="phone" placeholder="Phone Number *" required></div>
-                            <div class="form-group"><input type="email" name="email" placeholder="Email Address"></div>
-                            <div class="form-group"><textarea name="message" placeholder="I'm interested in this project..." rows="3"></textarea></div>
-                            <button type="submit" class="btn btn-primary btn-full">Get Details <i class="fas fa-paper-plane"></i></button>
-                        </form>
-                    </div>
+
+                <div class="pd-hero-actions">
+                    <button class="btn btn-primary" onclick="openEnquiryModal()">Enquire Now <i class="fas fa-arrow-right"></i></button>
+                    <a href="tel:+919443029094" class="btn btn-outline-light"><i class="fas fa-phone-alt"></i> +91 94430 29094</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Project Quick Stats Bar -->
+    <div class="pd-stats-bar">
+        <div class="container">
+            <div class="pd-stats-row">
+                <div class="pd-stat-item">
+                    <div class="pd-stat-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                    <div class="pd-stat-info">
+                        <strong>Premium Residential Plots</strong>
+                        <span class="project-description">Plot Development</span>
+                    </div>
+                </div>
+                <div class="pd-stat-divider"></div>
+                <div class="pd-stat-item">
+                    <div class="pd-stat-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="pd-stat-info">
+                        <strong>Prime Location</strong>
+                        <span>Near NH-544 Highway</span>
+                    </div>
+                </div>
+                <div class="pd-stat-divider"></div>
+                <div class="pd-stat-item">
+                    <div class="pd-stat-icon"><i class="fas fa-home"></i></div>
+                    <div class="pd-stat-info">
+                        <strong>World-Class Amenities</strong>
+                        <span>10+ Premium Features</span>
+                    </div>
+                </div>
+                <div class="pd-stat-divider"></div>
+                <div class="pd-stat-item">
+                    <div class="pd-stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="pd-stat-info">
+                        <strong>High Appreciation</strong>
+                        <span>Excellent ROI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About Project -->
     <section class="section pd-about-section">
         <div class="container">
-            <div class="pd-about-content">
-                <div class="pd-about-text">
-                    <p class="project-about-text"></p>
+            <div class="section-header">
+                <span class="section-label">About the Project</span>
+                <h2 class="section-title">Why Choose <span class="text-gradient project-name">RK Green City</span>?</h2>
+            </div>
+            <div class="pd-about-grid">
+                <div class="pd-about-image-col">
+                    <div class="pd-about-img-wrapper">
+                        <img src="images/site-view-4.jpg" alt="RK Green City Aerial View" class="pd-about-main-img">
+                    </div>
+                </div>
+                <div class="pd-about-text-col">
+                    <p class="project-about-text pd-about-desc"></p>
+                    <div class="pd-about-highlights">
+                        <div class="pd-about-highlight-item">
+                            <div class="pd-about-hl-icon"><i class="fas fa-file-certificate"></i></div>
+                            <div>
+                                <strong>DTCP Approved & Clear Titles</strong>
+                                <span>Every plot comes with legally verified, clear documentation</span>
+                            </div>
+                        </div>
+                        <div class="pd-about-highlight-item">
+                            <div class="pd-about-hl-icon"><i class="fas fa-road"></i></div>
+                            <div>
+                                <strong>Well-Planned Infrastructure</strong>
+                                <span>Tar roads, drainage, street lights & compound wall</span>
+                            </div>
+                        </div>
+                        <div class="pd-about-highlight-item">
+                            <div class="pd-about-hl-icon"><i class="fas fa-map-pin"></i></div>
+                            <div>
+                                <strong>Prime Connectivity</strong>
+                                <span>Close to NH-544, schools, hospitals & Rasipuram town</span>
+                            </div>
+                        </div>
+                        <div class="pd-about-highlight-item">
+                            <div class="pd-about-hl-icon"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <strong>Excellent Value Appreciation</strong>
+                                <span>Rapidly developing area with high ROI potential</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pd-about-cta">
+                        <button class="btn btn-primary" onclick="openEnquiryModal()">Get Pricing Details <i class="fas fa-arrow-right"></i></button>
+                        <a href="images/site-plan.pdf" target="_blank" class="btn btn-outline-dark"><i class="fas fa-download"></i> Download Brochure</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -349,6 +419,7 @@
                     <h4>Our Projects</h4>
                     <ul>
                         <li><a href="project-detail.html?project=rk-green-city">RK Green City</a></li>
+                        <li><a href="#">RK Athiyan (Soon)</a></li>
                         <li><a href="#">RK Royal Garden (Soon)</a></li>
                         <li><a href="#">RK Lakeside Villas (Soon)</a></li>
                         <li><a href="#">RK Paradise (Soon)</a></li>
@@ -382,6 +453,7 @@
                     <select name="project">
                         <option value="">Select Project (Optional)</option>
                         <option value="RK Green City">RK Green City</option>
+                        <option value="RK Athiyan (Upcoming)">RK Athiyan (Upcoming)</option>
                         <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
                         <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
                         <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>

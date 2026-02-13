@@ -439,6 +439,7 @@ function getEnquiryFormHTML() {
             <select name="project">
                 <option value="">Select Project (Optional)</option>
                 <option value="RK Green City">RK Green City</option>
+                <option value="RK Athiyan (Upcoming)">RK Athiyan (Upcoming)</option>
                 <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
                 <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
                 <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
@@ -981,6 +982,82 @@ function initTypingEffect() {
 }
 
 document.addEventListener('DOMContentLoaded', initTypingEffect);
+
+// ============ PROJECT FILTER DROPDOWN & TABS ============
+function toggleFilterDropdown() {
+    const btn = document.getElementById('filterDropdownBtn');
+    const menu = document.getElementById('filterDropdownMenu');
+    if (!btn || !menu) return;
+    
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    const dropdown = document.getElementById('projectFilterDropdown');
+    if (dropdown && !dropdown.contains(e.target)) {
+        const btn = document.getElementById('filterDropdownBtn');
+        const menu = document.getElementById('filterDropdownMenu');
+        if (btn) btn.classList.remove('open');
+        if (menu) menu.classList.remove('open');
+    }
+});
+
+function filterProjects(category, clickedBtn) {
+    const cards = document.querySelectorAll('.project-filter-card');
+    
+    // Show/hide cards based on category
+    cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            // Animate in
+            requestAnimationFrame(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            });
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+    
+    // Update active state for desktop tabs
+    document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('data-filter') === category) {
+            tab.classList.add('active');
+        }
+    });
+    
+    // Update active state for mobile dropdown
+    document.querySelectorAll('.filter-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.getAttribute('data-filter') === category) {
+            option.classList.add('active');
+        }
+    });
+    
+    // Update dropdown label
+    const filterLabel = document.getElementById('filterLabel');
+    if (filterLabel) {
+        const labels = {
+            'all': 'All Projects',
+            'ongoing': 'Ongoing',
+            'completed': 'Completed',
+            'upcoming': 'Upcoming'
+        };
+        filterLabel.textContent = labels[category] || 'All Projects';
+    }
+    
+    // Close dropdown menu
+    const btn = document.getElementById('filterDropdownBtn');
+    const menu = document.getElementById('filterDropdownMenu');
+    if (btn) btn.classList.remove('open');
+    if (menu) menu.classList.remove('open');
+}
 
 // ============ SMOOTH IMAGE LOADING ============
 document.addEventListener('DOMContentLoaded', () => {

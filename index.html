@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -92,7 +93,7 @@
         </div>
     </section>
 
-    <!-- Ongoing Projects Section -->
+    <!-- Projects Section with Filter -->
     <section class="section projects-section" id="projects">
         <!-- Decorative elements -->
         <div class="section-decoration deco-gradient-orb" style="width:400px;height:400px;top:-100px;right:-150px;"></div>
@@ -100,15 +101,40 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="section-label">Our Portfolio</span>
-                <h2 class="section-title">Ongoing <span class="text-gradient">Projects</span></h2>
-                <p class="section-desc">Explore our currently active residential developments designed for modern living.</p>
+                <h2 class="section-title">Our <span class="text-gradient">Projects</span></h2>
+                <p class="section-desc">Explore our residential developments designed for modern living.</p>
             </div>
-            <div class="projects-grid projects-grid-featured">
-                <!-- RK Green City - Featured Ongoing Project -->
-                <div class="project-card project-card-featured" data-aos="fade-up">
+
+            <!-- Project Filter Dropdown -->
+            <div class="project-filter-wrapper">
+                <div class="project-filter-dropdown" id="projectFilterDropdown">
+                    <button class="filter-dropdown-btn" id="filterDropdownBtn" onclick="toggleFilterDropdown()">
+                        <span id="filterLabel">All Projects</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-dropdown-menu" id="filterDropdownMenu">
+                        <button class="filter-option active" data-filter="all" onclick="filterProjects('all', this)">All Projects</button>
+                        <button class="filter-option" data-filter="ongoing" onclick="filterProjects('ongoing', this)">Ongoing</button>
+                        <button class="filter-option" data-filter="completed" onclick="filterProjects('completed', this)">Completed</button>
+                        <button class="filter-option" data-filter="upcoming" onclick="filterProjects('upcoming', this)">Upcoming</button>
+                    </div>
+                </div>
+                <!-- Desktop Filter Tabs -->
+                <div class="project-filter-tabs">
+                    <button class="filter-tab active" data-filter="all" onclick="filterProjects('all', this)">All Projects</button>
+                    <button class="filter-tab" data-filter="ongoing" onclick="filterProjects('ongoing', this)">Ongoing</button>
+                    <button class="filter-tab" data-filter="completed" onclick="filterProjects('completed', this)">Completed</button>
+                    <button class="filter-tab" data-filter="upcoming" onclick="filterProjects('upcoming', this)">Upcoming</button>
+                </div>
+            </div>
+
+            <!-- All Project Cards -->
+            <div class="projects-grid projects-filterable">
+                <!-- ONGOING: RK Green City -->
+                <div class="project-card project-filter-card" data-category="ongoing" data-aos="fade-up">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=900&q=80" alt="RK Green City">
-                        <div class="project-badge">Ongoing</div>
+                        <div class="project-badge badge-ongoing">Ongoing</div>
                         <div class="project-overlay">
                             <a href="project-detail.html?project=rk-green-city" class="btn btn-sm">View Details</a>
                         </div>
@@ -125,21 +151,53 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Upcoming Projects Section -->
-    <section class="section upcoming-section" id="upcoming">
-        <div class="section-decoration deco-dots" style="width:300px;height:300px;top:40px;left:-80px;opacity:0.4;"></div>
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Coming Soon</span>
-                <h2 class="section-title">Upcoming <span class="text-gradient">Projects</span></h2>
-                <p class="section-desc">Exciting new developments on the horizon. Register your interest early!</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card upcoming-card" data-aos="fade-up">
+                <!-- COMPLETED: RK Nagar -->
+                <div class="project-card project-filter-card" data-category="completed" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80" alt="RK Nagar">
+                        <div class="project-badge badge-completed"><i class="fas fa-check-circle"></i> Completed</div>
+                        <div class="project-overlay">
+                            <span class="btn btn-sm">Sold Out</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Nagar</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Salem</p>
+                        <p class="project-desc-brief">A successfully delivered residential plot project with premium amenities. All plots have been sold and families are now enjoying their dream homes.</p>
+                        <div class="project-tags">
+                            <span>DTCP Approved</span>
+                            <span>Fully Sold</span>
+                            <span>Residential Plots</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UPCOMING: RK Athiyan -->
+                <div class="project-card project-filter-card upcoming-card" data-category="upcoming" data-aos="fade-up">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="RK Athiyan">
+                        <div class="project-badge badge-upcoming">Coming Soon</div>
+                        <div class="upcoming-overlay">
+                            <div class="upcoming-label">
+                                <i class="fas fa-clock"></i>
+                                <span>Launching Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>RK Athiyan</h3>
+                        <p class="project-location"><i class="fas fa-map-marker-alt"></i> Rasipuram, Namakkal District</p>
+                        <div class="project-tags">
+                            <span>Residential Plots</span>
+                            <span>Premium Location</span>
+                        </div>
+                        <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
+                    </div>
+                </div>
+
+                <!-- UPCOMING: RK Royal Garden -->
+                <div class="project-card project-filter-card upcoming-card" data-category="upcoming" data-aos="fade-up">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="RK Royal Garden">
                         <div class="project-badge badge-upcoming">Coming Soon</div>
@@ -160,7 +218,9 @@
                         <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
                     </div>
                 </div>
-                <div class="project-card upcoming-card" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- UPCOMING: RK Lakeside Villas -->
+                <div class="project-card project-filter-card upcoming-card" data-category="upcoming" data-aos="fade-up">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="RK Lakeside Villas">
                         <div class="project-badge badge-upcoming">Coming Soon</div>
@@ -181,7 +241,9 @@
                         <button class="btn btn-sm btn-register" onclick="openEnquiryModal()">Register Interest <i class="fas fa-bell"></i></button>
                     </div>
                 </div>
-                <div class="project-card upcoming-card" data-aos="fade-up" data-aos-delay="200">
+
+                <!-- UPCOMING: RK Paradise -->
+                <div class="project-card project-filter-card upcoming-card" data-category="upcoming" data-aos="fade-up">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80" alt="RK Paradise">
                         <div class="project-badge badge-upcoming">Coming Soon</div>
@@ -466,6 +528,7 @@
                             <select name="project">
                                 <option value="">Select Project (Optional)</option>
                                 <option value="rk-green-city">RK Green City</option>
+                                <option value="rk-athiyan">RK Athiyan (Upcoming)</option>
                                 <option value="rk-royal-garden">RK Royal Garden (Upcoming)</option>
                                 <option value="rk-lakeside">RK Lakeside Villas (Upcoming)</option>
                                 <option value="rk-paradise">RK Paradise (Upcoming)</option>
@@ -508,6 +571,7 @@
                     <h4>Our Projects</h4>
                     <ul>
                         <li><a href="project-detail.html?project=rk-green-city">RK Green City</a></li>
+                        <li><a href="#">RK Athiyan (Soon)</a></li>
                         <li><a href="#">RK Royal Garden (Soon)</a></li>
                         <li><a href="#">RK Lakeside Villas (Soon)</a></li>
                         <li><a href="#">RK Paradise (Soon)</a></li>
@@ -548,6 +612,7 @@
                     <select name="project">
                         <option value="">Select Project (Optional)</option>
                         <option value="RK Green City">RK Green City</option>
+                        <option value="RK Athiyan (Upcoming)">RK Athiyan (Upcoming)</option>
                         <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
                         <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
                         <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
