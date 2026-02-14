@@ -3572,6 +3572,94 @@ ul { list-style: none; }
     background: var(--bg-light);
 }
 
+/* Location groups - categorized cards */
+.location-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.loc-group {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.loc-group:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.loc-group-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(196, 154, 108, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.loc-group-title i {
+    color: var(--accent);
+    font-size: 1rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(196, 154, 108, 0.1);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.loc-group-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loc-group-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-accent);
+    font-size: 0.88rem;
+    color: var(--text-body);
+    line-height: 1.5;
+}
+
+.loc-group-list li i {
+    color: var(--accent);
+    font-size: 0.7rem;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+/* Full-width map below location groups */
+.location-map-full {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+}
+
+.location-map-full iframe {
+    display: block;
+    width: 100%;
+}
+
+/* Legacy support */
 .location-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -4127,6 +4215,10 @@ ul { list-style: none; }
         display: flex;
     }
     
+    .location-groups {
+        grid-template-columns: 1fr 1fr;
+    }
+    
     .hero h1 {
         font-size: 2.8rem;
     }
@@ -4194,6 +4286,11 @@ ul { list-style: none; }
     
     .location-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .location-groups {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
     
     .about-profile-grid {

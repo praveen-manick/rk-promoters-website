@@ -509,17 +509,37 @@ const projectsData = {
             { src: 'images/site-view-3.jpg', caption: 'Road View' },
             { src: 'images/site-view-4.jpg', caption: 'Aerial View' }
         ],
-        nearbyPlaces: [
-            '2 km from Rasipuram Town',
-            '1 km from NH-544 (Salem-Namakkal Highway)',
-            '3 km from Rasipuram Bus Stand',
-            '2 km from Government Hospital',
-            '1.5 km from CBSE & Matriculation Schools',
-            '2 km from Namakkal Anjaneyar Temple',
-            '1 km from Petrol Pump',
-            '500m from Local Market',
-            '4 km from Namakkal Town',
-            '3 km from Rasipuram Railway Station'
+        locationGroups: [
+            {
+                title: 'Connectivity & Transport',
+                icon: 'fas fa-road',
+                items: [
+                    '1.2 km to Rasipuram Railway Station',
+                    '2 km to Rasipuram New Bus Stand',
+                    'Near Salem–Namakkal Highway (NH-44)',
+                    'On SH-95 (Mohanur–Rasipuram) corridor'
+                ]
+            },
+            {
+                title: 'Education & Healthcare',
+                icon: 'fas fa-graduation-cap',
+                items: [
+                    '1 km to Vidhya Mandhir Matric Hr. Sec. School',
+                    '6 km to Sri Vidhya Mandhir B.Ed College',
+                    '0.9 km to Sudha Hospital (Multi-specialty)',
+                    '1.5 km to Government Hospital, Rasipuram'
+                ]
+            },
+            {
+                title: 'Local Landmarks',
+                icon: 'fas fa-landmark',
+                items: [
+                    '1.4 km to Sub-Registrar Office',
+                    '2.3 km to VAO, EB & BDO offices',
+                    'Minutes from Rasipuram Local Market',
+                    'Near Kolli Hills & Agaya Gangai Falls'
+                ]
+            }
         ]
     }
 };
@@ -563,11 +583,16 @@ function initProjectDetail() {
         initAmenitiesCarousel();
     }
     
-    // Update nearby places
-    const locationList = document.querySelector('.location-list ul');
-    if (locationList) {
-        locationList.innerHTML = project.nearbyPlaces.map(p => `
-            <li><i class="fas fa-map-pin"></i> ${p}</li>
+    // Update location groups
+    const locationContainer = document.querySelector('.location-groups');
+    if (locationContainer && project.locationGroups) {
+        locationContainer.innerHTML = project.locationGroups.map(group => `
+            <div class="loc-group">
+                <h4 class="loc-group-title"><i class="${group.icon}"></i> ${group.title}</h4>
+                <ul class="loc-group-list">
+                    ${group.items.map(item => `<li><i class="fas fa-check"></i> ${item}</li>`).join('')}
+                </ul>
+            </div>
         `).join('');
     }
     
