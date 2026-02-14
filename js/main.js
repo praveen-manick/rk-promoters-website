@@ -440,9 +440,6 @@ function getEnquiryFormHTML() {
                 <option value="">Select Project (Optional)</option>
                 <option value="RK Green City">RK Green City</option>
                 <option value="RK Athiyan (Upcoming)">RK Athiyan (Upcoming)</option>
-                <option value="RK Royal Garden (Upcoming)">RK Royal Garden (Upcoming)</option>
-                <option value="RK Lakeside Villas (Upcoming)">RK Lakeside Villas (Upcoming)</option>
-                <option value="RK Paradise (Upcoming)">RK Paradise (Upcoming)</option>
             </select>
         </div>
         <div class="form-group">
@@ -510,8 +507,7 @@ const projectsData = {
             { src: 'images/site-view-1.jpg', caption: 'Internal Roads' },
             { src: 'images/site-view-2.jpg', caption: 'Road Junction' },
             { src: 'images/site-view-3.jpg', caption: 'Road View' },
-            { src: 'images/site-view-4.jpg', caption: 'Aerial View' },
-            { src: 'images/site-plan.png', caption: 'Site Plan' }
+            { src: 'images/site-view-4.jpg', caption: 'Aerial View' }
         ],
         nearbyPlaces: [
             '2 km from Rasipuram Town',
